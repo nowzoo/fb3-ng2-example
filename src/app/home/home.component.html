@@ -1,3 +1,34 @@
 <p>
   Home Works!
 </p>
+
+<h3>Posts</h3>
+<pre>
+{{ posts | json }}
+</pre>
+
+<h3>Posts ordered by child (i.e. using a Query rather than a ref)</h3>
+<pre>
+{{ listAsQuery | json }}
+</pre>
+
+<h3>A list of scalars</h3>
+<pre>
+{{ listOfScalars | json }}
+</pre>
+
+
+<h3>An Object</h3>
+<pre>
+{{ anObject | json }}
+</pre>
+
+<h3>A Scalar</h3>
+<pre>
+{{ aScalar | json }}
+</pre>
+
+<h3>Does not exist</h3>
+<pre>
+{{ doesntExist | json }}
+</pre>

@@ -1,9 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
+
+import * as firebase from 'firebase';
+import {
+    DEFAULT_FIREBASE_APP
+} from 'fb3-ng2';
+
 
 import { ApiService } from './shared';
 import { HomeComponent } from './home';
 import { AboutComponent } from './about';
+
+
 
 import '../style/app.scss';
 
@@ -25,6 +33,7 @@ import '../style/app.scss';
 export class AppComponent {
   url = 'https://github.com/preboot/angular2-webpack';
 
-  constructor(private api: ApiService) {
+  constructor(private api: ApiService, @Inject(DEFAULT_FIREBASE_APP) private fbApp: Object) {
+      console.log('in the app component', this.fbApp);
   }
 }
